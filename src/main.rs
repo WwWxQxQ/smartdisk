@@ -7,7 +7,6 @@ use clap::{Parser};
 use anyhow::{Error, Result};
 use chrono::Utc;
 
-// // 定义命令行参数结构体
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
 struct Cli {
@@ -40,9 +39,7 @@ fn run() -> Result<()> {
     }
 
     let out = String::from_utf8(child.stdout)?;
-    if let Some(file) = cli.file {
-        write_to_file(&out, file)?;
-    };
+    write_to_file(&out, cli.file.unwrap())?;
 
     let list: HashMap<&str, &str> = out
         .split('\n')
