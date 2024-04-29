@@ -18,7 +18,7 @@ and then
 
 ```shell
 source ~/.bashrc
-````
+```
 
 ## 2. Usage
 
@@ -30,4 +30,4 @@ Options:
   -f, --file <FILE>      [default: ./disk_record.md]
   -h, --help             Print help
   -V, --version          Print version
-  ```
+```
