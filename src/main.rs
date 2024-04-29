@@ -15,7 +15,6 @@ struct Cli {
 
     #[arg(short, long, value_name = "FILE", default_value = "./disk_record.md")]
     file: Option<PathBuf>,
-
 }
 
 fn main() {
@@ -47,7 +46,6 @@ fn run() -> Result<()> {
         .filter(|(k, v)| k.is_some() && v.is_some())
         .map(|(k, v)| (k.unwrap().trim(), v.unwrap().trim()))
         .collect();
-
     
     for (k, v) in list {
         println!("{}: {}", k, v);
